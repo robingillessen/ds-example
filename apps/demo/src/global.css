@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@plugin "tailwindcss-react-aria-components";
+
+/*
+  @source laat Tailwind de library source scannen voor class-names.
+  Dit is nodig omdat @tailwindcss/vite standaard geen node_modules scant.
+  In een echte consumer-setup: @import "@ds-example/ui/style.css" (pre-compiled).
+*/
+@source "../../../packages/ui/src"; /* apps/demo/src/ → 3× ../ → monorepo root */
+
+/* ── Primitives ─────────────────────────────────────────────────────────── */
+:root {
+  --blue-400: oklch(0.65 0.19 261);
+  --blue-500: oklch(0.55 0.22 261);
+  --blue-600: oklch(0.47 0.20 261);
+
+  --neutral-50:  oklch(0.985 0.002 247);
+  --neutral-100: oklch(0.960 0.004 247);
+  --neutral-200: oklch(0.910 0.007 247);
+  --neutral-400: oklch(0.700 0.011 247);
+  --neutral-800: oklch(0.260 0.006 247);
+  --neutral-900: oklch(0.180 0.004 247);
+  --neutral-950: oklch(0.120 0.003 247);
+
+  --red-50:    oklch(0.971 0.013 17);
+  --red-500:   oklch(0.637 0.237 25);
+  --green-50:  oklch(0.982 0.018 155);
+  --green-500: oklch(0.723 0.219 149);
+  --amber-50:  oklch(0.987 0.026 102);
+  --amber-500: oklch(0.769 0.188 70);
+  --sky-50:    oklch(0.977 0.013 236);
+  --sky-500:   oklch(0.685 0.169 237);
+}
+
+/* ── Semantic tokens ─────────────────────────────────────────────────────── */
+:root {
+  --primary:       var(--blue-500);
+  --primary-hover: var(--blue-600);
+  --on-primary:    var(--neutral-50);
+
+  --surface:       var(--neutral-50);
+  --surface-hover: var(--neutral-100);
+  --fg:            var(--neutral-900);
+  --fg-muted:      var(--neutral-400);
+  --border:        var(--neutral-200);
+
+  --danger:        var(--red-500);
+  --danger-fg:     var(--red-50);
+  --success:       var(--green-500);
+  --success-fg:    var(--green-50);
+  --warning:       var(--amber-500);
+  --warning-fg:    var(--amber-50);
+  --info:          var(--sky-500);
+  --info-fg:       var(--sky-50);
+
+  --ds-radius-sm: 0.25rem;
+  --ds-radius-md: 0.5rem;
+  --ds-radius-lg: 0.75rem;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --surface:       var(--neutral-950);
+  --surface-hover: var(--neutral-800);
+  --fg:            var(--neutral-50);
+  --fg-muted:      var(--neutral-400);
+  --border:        var(--neutral-800);
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-primary:       var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary:    var(--on-primary);
+
+  --color-surface:       var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-fg:            var(--fg);
+  --color-fg-muted:      var(--fg-muted);
+  --color-border:        var(--border);
+
+  --color-danger:        var(--danger);
+  --color-danger-fg:     var(--danger-fg);
+  --color-success:       var(--success);
+  --color-success-fg:    var(--success-fg);
+  --color-warning:       var(--warning);
+  --color-warning-fg:    var(--warning-fg);
+  --color-info:          var(--info);
+  --color-info-fg:       var(--info-fg);
+
+  --radius-sm: var(--ds-radius-sm);
+  --radius-md: var(--ds-radius-md);
+  --radius-lg: var(--ds-radius-lg);
+}
+
+[data-brand="green"] {
+  --primary:       oklch(0.55 0.17 145);
+  --primary-hover: oklch(0.47 0.15 145);
+}
+
+[data-brand="orange"] {
+  --primary:       oklch(0.70 0.17 55);
+  --primary-hover: oklch(0.62 0.15 55);
+  --ds-radius-sm: 0;
+  --ds-radius-md: 0;
+  --ds-radius-lg: 0;
+}
+
+[data-brand="purple"] {
+  --primary:       oklch(0.50 0.22 290);
+  --primary-hover: oklch(0.42 0.20 290);
+  --ds-radius-sm: 9999px;
+  --ds-radius-md: 9999px;
+  --ds-radius-lg: 9999px;
+}

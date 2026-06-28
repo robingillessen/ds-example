@@ -1,0 +1,32 @@
+:root {
+  --primary:       var(--blue-500);
+  --primary-hover: var(--blue-600);
+  --on-primary:    var(--neutral-50);
+
+  --surface:       var(--neutral-50);
+  --surface-hover: var(--neutral-100);
+  --fg:            var(--neutral-900);
+  --fg-muted:      var(--neutral-400);
+  --border:        var(--neutral-200);
+
+  --danger:        var(--red-500);
+  --danger-fg:     var(--red-50);
+  --success:       var(--green-500);
+  --success-fg:    var(--green-50);
+  --warning:       var(--amber-500);
+  --warning-fg:    var(--amber-50);
+  --info:          var(--sky-500);
+  --info-fg:       var(--sky-50);
+
+  --ds-radius-sm: 0.25rem;
+  --ds-radius-md: 0.5rem;
+  --ds-radius-lg: 0.75rem;
+}
+
+[data-theme="dark"] {
+  --surface:       var(--neutral-950);
+  --surface-hover: var(--neutral-900);
+  --fg:            var(--neutral-50);
+  --fg-muted:      var(--neutral-400);
+  --border:        var(--neutral-800);
+}

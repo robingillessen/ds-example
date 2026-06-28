@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@plugin "tailwindcss-react-aria-components";
+
+@import "./tokens/primitives.css";
+@import "./tokens/semantic.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-primary:       var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary:    var(--on-primary);
+
+  --color-surface:       var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-fg:            var(--fg);
+  --color-fg-muted:      var(--fg-muted);
+  --color-border:        var(--border);
+
+  --color-danger:        var(--danger);
+  --color-danger-fg:     var(--danger-fg);
+  --color-success:       var(--success);
+  --color-success-fg:    var(--success-fg);
+  --color-warning:       var(--warning);
+  --color-warning-fg:    var(--warning-fg);
+  --color-info:          var(--info);
+  --color-info-fg:       var(--info-fg);
+
+  --radius-sm: var(--ds-radius-sm);
+  --radius-md: var(--ds-radius-md);
+  --radius-lg: var(--ds-radius-lg);
+}
